@@ -1,0 +1,50 @@
+body {
+    background-color: #000511;
+  }
+
+  img:hover {
+    opacity: 0.5;
+  }
+
+
+  .contenedor {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    width: 50%;
+    background-color: #1a53d8;
+    margin: auto;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  label {
+    margin-bottom: 10px;
+    display: flex;
+  }
+  
+  input {
+    padding: 5px;
+    margin-bottom: 20px;
+    display: flex;
+  }
+  
+  a {
+    color: blue;
+  }
+  
+  button:hover {
+    background-color: rgb(4, 51, 12);
+    display: flex;
+  }
+
+  button {
+    padding: 10px;
+    background-color: #138a48;
+    display: flex;
+  }
