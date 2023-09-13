@@ -1,0 +1,66 @@
+body {
+  background-color: #cab089;
+}
+
+img:hover {
+  opacity: 0.5;
+}
+
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+  width: 50%;
+  box-shadow: 0 0 10px rgba(77, 61, 46, 0.911);
+  border-radius: 10px;
+  margin: 0 auto 20px;
+  font: 16px 'Playfair Display', sans-serif;
+  background-color: #f19306;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centra el formulario horizontalmente dentro del contenedor */
+}
+
+label {
+  margin-bottom: 10px; /* Reduce el espacio entre las etiquetas */
+  text-align: center; /* Centra el texto en las etiquetas */
+}
+
+input {
+  padding: 5px;
+  margin-bottom: 10px; /* Reduce el espacio entre los campos de entrada */
+  width: 100%; /* Ocupa todo el ancho disponible */
+  }
+
+a {
+  color: rgba(53, 40, 28, 0.911);
+  text-align: center; /* Centra el texto del enlace */
+  }
+
+button:hover {
+  background-color: rgba(77, 61, 46, 0.911);
+}
+
+button {
+  padding: 10px;
+  background-color: rgba(77, 61, 46, 0.911);
+  align-self: center; 
+}
+
+/* Funcion para rotar el Logo */
+@keyframes girar { 
+  from {
+      transform: rotate(0deg); 
+  }
+  to {
+      transform: rotate(360deg); 
+  }
+}
+
+header img {
+  animation: girar 5s infinite linear; 
+}
