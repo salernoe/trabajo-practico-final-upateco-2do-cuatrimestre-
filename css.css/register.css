@@ -6,17 +6,22 @@ img:hover {
   opacity: 0.5;
 }
 
-.container{
+.contenedor {
   display: flex;
+  flex-direction: column;
+  gap: 10px;
   justify-content: center;
   align-items: center;
-  height: 400px;
+  height: 450px;
   width: 50%;
-  box-shadow: 0 0 10px rgba(77, 61, 46, 0.911);
-  border-radius: 10px;
-  margin: 0 auto 20px;
-  font: 16px 'Playfair Display', sans-serif;
   background-color: #f19306;
+  margin: auto;
+  border-radius: 10px;    
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
 }
 
 form {
@@ -27,18 +32,28 @@ form {
 
 label {
   margin-bottom: 10px; /* Reduce el espacio entre las etiquetas */
-  text-align: center; /* Centra el texto en las etiquetas */
+  text-align: left; /* Centra el texto en las etiquetas */
+  font-weight: bold;
 }
 
 input {
   padding: 5px;
   margin-bottom: 10px; /* Reduce el espacio entre los campos de entrada */
   width: 100%; /* Ocupa todo el ancho disponible */
+  border: 1px solid #ccc;
+  border-radius: 5px;
   }
 
 a {
   color: rgba(53, 40, 28, 0.911);
   text-align: center; /* Centra el texto del enlace */
+  width: 150px; /* Cambia el ancho según tus preferencias */
+  height: 50px; /* Cambia la altura según tus preferencias */
+  background-color: rgba(53, 40, 28, 0.911); /* Cambia el color según tus preferencias */
+  padding: 10px;
+  align-self: center;
+  color: white; /* Cambia el color del texto si es necesario */
+  font-size: 16px; /* Cambia el tamaño de fuente del texto si es necesario */
   }
 
 button:hover {

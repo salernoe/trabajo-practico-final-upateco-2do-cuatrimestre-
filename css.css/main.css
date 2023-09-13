@@ -1,75 +1,113 @@
-body {
-    background-color: #cab089;
-
-    font-family: 'Playfair Display', sans-serif;
-  }
-
-h1 {
-    font-family: 'Playfair Display', sans-serif;
-  }
-  
-  img:hover {
-    opacity: 0.5;
-  }
-
-  .contenedor {
+/* Estilos para el encabezado */
+header {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
-    height: 400px;
-    width: 50%;
-    background-color: #f19306;
-    margin: auto;
-    border-radius: 10px;
-  }
-  
-  form {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  label {
-    margin-bottom: 10px;
-    display: flex;
-  }
-  
-  input {
-    padding: 5px;
-    margin-bottom: 20px;
-    display: flex;
-  }
-  
-  a {
-    color: rgba(77, 61, 46, 0.911);
-  }
-  
-  button:hover {
-    background-color: rgba(110, 86, 62, 0.671);
-    display: flex;
-  }
-
-  button {
-    padding: 10px;
-    background-color: rgba(53, 40, 28, 0.911);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Playfair Display', sans-serif;
-    font-size: 18px;
-    font-weight: bold;
-  }
-
-/* Funcion para rotar el Logo */
-@keyframes girar { 
-  from {
-      transform: rotate(0deg); 
-  }
-  to {
-      transform: rotate(360deg); 
-  }
+    background-color: rgba(77, 61, 46, 0.911);
+    color: black;
+    padding: 10px 20px;
 }
 
 header img {
-  animation: girar 5s infinite linear; 
+    margin-right: 10px;
+    animation: spin 5s infinite linear; /* Cambiamos el nombre de la animación a "spin" */
+    max-width: 100px;
+    transition: transform 0.3s ease-in-out; /* Agregamos una transición suave al girar */
+}
+
+/* Función para rotar el Logo */
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+header h1 {
+    flex-grow: 1;
+    font-size: 28px; /* Aumentamos el tamaño del encabezado */
+}
+
+/* Estilos para el cuerpo de la página */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Playfair Display', sans-serif;
+    background-color: #cab089;
+}
+
+/* Estilos para el contenedor principal */
+.container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-gap: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #f19306;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    transition: box-shadow 0.3s ease-in-out; /* Efecto de sombra suave al pasar el ratón */
+}
+
+.container:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos para la parte izquierda (left) */
+.left {
+    
+}
+
+.avatar img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+/* Estilos para el nombre de usuario */
+.avatar p {
+    font-size: 18px;
+    font-weight: bold; 
+}
+
+/* Estilos para la navegación */
+.navigation {
+    text-align: right;
+    margin-top: 20px;
+}
+
+.navigation button {
+    background-color: rgba(77, 61, 46, 0.911);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 10px; 
+    transition: background-color 0.3s ease-in-out; /* Efecto de cambio de color al pasar el ratón */
+}
+
+.navigation button:hover {
+    background-color: #555; /* Cambiamos el color al pasar el ratón */
+}
+
+.right {
+    /* Puedes añadir estilos específicos para la parte derecha aquí */
+}
+
+/* Estilos para el contenido */
+.content {
+    margin-top: 20px;
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
 }
