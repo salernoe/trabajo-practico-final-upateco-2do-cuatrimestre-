@@ -1,11 +1,10 @@
 body {
-    background-color: #000511;
+    background-color: #cab089;
   }
 
   img:hover {
     opacity: 0.5;
   }
-
 
   .contenedor {
     display: flex;
@@ -14,7 +13,7 @@ body {
     align-items: center;
     height: 400px;
     width: 50%;
-    background-color: #1a53d8;
+    background-color: #f19306;
     margin: auto;
   }
   
@@ -35,16 +34,30 @@ body {
   }
   
   a {
-    color: blue;
+    color: rgba(77, 61, 46, 0.911);
   }
   
   button:hover {
-    background-color: rgb(4, 51, 12);
+    background-color: rgba(110, 86, 62, 0.671);
     display: flex;
   }
 
   button {
     padding: 10px;
-    background-color: #138a48;
+    background-color: rgba(53, 40, 28, 0.911);
     display: flex;
   }
+
+/* Funcion para rotar el Logo */
+@keyframes girar { 
+  from {
+      transform: rotate(0deg); 
+  }
+  to {
+      transform: rotate(360deg); 
+  }
+}
+
+header img {
+  animation: girar 5s infinite linear; 
+}
