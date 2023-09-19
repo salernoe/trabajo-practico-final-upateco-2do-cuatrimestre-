@@ -197,10 +197,9 @@ a:visited {
 @media (min-width: 600px) {
   form {
     margin-top: 3%;
-    padding: 0rem 2rem;
     margin-bottom: 3.7%;
     width: 23rem;
-    height: 27rem;
+    height: 25rem;
   }
 
   h1 {
@@ -209,5 +208,43 @@ a:visited {
 
   #acceder {
     width: 55%;
+  }
+
+  .logo {
+    width: 10rem;
+    height: 10rem;
+  }
+
+  .container {
+    height: 20rem;
+  }
+
+  .bottom_part {
+    width: 7rem;
+    height: 7rem;
+    bottom: -0.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(#000511, #000511);
+  }
+
+  .container {
+    width: 50%;
+  }
+
+  form {
+    padding: 2.5rem;
+    justify-content: space-around;
+  }
+
+  main {
+    width: 50%;
+    padding: 7%;
   }
 }
