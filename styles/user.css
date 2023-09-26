@@ -201,3 +201,15 @@ body {
         background-color: #e799d6; 
     }
 }
+
+
+.lista-datos li i {
+    font-size: 24px; 
+    margin-right: 10px; 
+}
+
+
+.lista-datos li span {
+    font-size: 18px;
+    font-weight: bold;
+}

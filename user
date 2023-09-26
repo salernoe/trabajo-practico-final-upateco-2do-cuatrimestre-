@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <title>Talkive! Mi usuario</title>
 </head>
 
@@ -18,7 +18,7 @@
         <div class="perfil-usuario-header">
             <div class="perfil-usuario-portada">
                 <div class="perfil-usuario-avatar">
-                    <img src="http://localhost/multimedia/relleno/img-c9.png" alt="img-avatar">
+                    <img src="img\Avatar.png" alt="img-avatar">
                     <button type="button" class="boton-avatar">
                         <i class="far fa-image"></i>
                     </button>
@@ -31,10 +31,14 @@
             </div>
             <div class="perfil-usuario-footer">
                 <ul class="lista-datos">
-                    <li><i class="icono fas fa-map-signs"></i> Nombre de Usuario: <span id="nombreUsuario">Usuario123</span> <button onclick="editarCampo('nombreUsuario')">Editar</button></li>
-                    <li><i class="icono fas fa-phone-alt"></i> Nombre: <span id="nombre">John</span> <button onclick="editarCampo('nombre')">Editar</button></li>
-                    <li><i class="icono fas fa-briefcase"></i> Apellido: <span id="apellido">Doe</span> <button onclick="editarCampo('apellido')">Editar</button></li>
-                    <li><i class="icono fas fa-building"></i> Correo Electrónico: <span id="correoElectronico">john@example.com</span> <button onclick="editarCampo('correoElectronico')">Editar</button></li>
+                    <li><i class="fa fa-user"></i> Nombre de Usuario: 
+                        <span id="nombreUsuario">Usuario123</span> <button onclick="editarCampo('nombreUsuario')">Editar</button></li> 
+                    <li><i class="fa fa-user"></i> Nombre: 
+                         <span id="nombre">John</span> <button onclick="editarCampo('nombre')">Editar</button></li> 
+                    <li><i class="fa fa-user"></i> Apellido: 
+                         <span id="apellido">Doe</span> <button onclick="editarCampo('apellido')">Editar</button></li> 
+                    <li><i class="fa fa-user"></i> Correo Electrónico: 
+                         <span id="correoElectronico">john@example.com</span> <button onclick="editarCampo('correoElectronico')">Editar</button></li> 
                 </ul>
             </div>
         </div>
@@ -43,7 +47,7 @@
         <button id="cambiar-contraseña-button">Cambiar Contraseña</button>
     </div>
 
-    <!-- <script>
+    <script>
         function editarCampo(id) {
             const campo = document.getElementById(id);
             const valorActual = campo.textContent;
@@ -53,7 +57,7 @@
                 campo.textContent = nuevoValor;
             }
         }
-    </script> -->
+    </script> 
 </body>
 
 </html>
