@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles\user.css">
+    <meta name="description" content="Descripción de tu página">
+    <link rel="stylesheet" href="styles/user.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
@@ -18,7 +19,7 @@
         <div class="perfil-usuario-header">
             <div class="perfil-usuario-portada">
                 <div class="perfil-usuario-avatar">
-                    <img src="img\Avatar.png" alt="img-avatar">
+                    <img src="img/Avatar.png" alt="Avatar de usuario">
                     <button type="button" class="boton-avatar">
                         <i class="far fa-image"></i>
                     </button>
@@ -31,33 +32,79 @@
             </div>
             <div class="perfil-usuario-footer">
                 <ul class="lista-datos">
-                    <li><i class="fa fa-user"></i> Nombre de Usuario: 
-                        <span id="nombreUsuario">Usuario123</span> <button onclick="editarCampo('nombreUsuario')">Editar</button></li> 
-                    <li><i class="fa fa-user"></i> Nombre: 
-                         <span id="nombre">John</span> <button onclick="editarCampo('nombre')">Editar</button></li> 
-                    <li><i class="fa fa-user"></i> Apellido: 
-                         <span id="apellido">Doe</span> <button onclick="editarCampo('apellido')">Editar</button></li> 
-                    <li><i class="fa fa-user"></i> Correo Electrónico: 
-                         <span id="correoElectronico">john@example.com</span> <button onclick="editarCampo('correoElectronico')">Editar</button></li> 
+                    <li><i class="fa fa-user"></i> Nombre de Usuario:
+                        <span id="nombreUsuario">Usuario123</span> <button onclick="editarCampo('nombreUsuario')">Editar</button></li>
+                    <li><i class="fa fa-user"></i> Nombre:
+                        <span id="nombre">John</span> <button onclick="editarCampo('nombre')">Editar</button></li>
+                    <li><i class="fa fa-user"></i> Apellido:
+                        <span id="apellido">Doe</span> <button onclick="editarCampo('apellido')">Editar</button></li>
+                    <li><i class="fa fa-user"></i> Correo Electrónico:
+                        <span id="correoElectronico">john@example.com</span> <button onclick="editarCampo('correoElectronico')">Editar</button></li>
                 </ul>
             </div>
         </div>
     </section>
     <div class="cambiar-contraseña">
-        <button id="cambiar-contraseña-button">Cambiar Contraseña</button>
+        <button id="cambiar-contraseña-button" onclick="mostrarModal()">Cambiar Contraseña</button>
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <span class="close-button" onclick="cerrarModal()">&times;</span>
+                <h2>Cambiar Contraseña</h2>
+                <form>
+                    <label for="contrasena-anterior">Contraseña Anterior:</label>
+                    <input type="password" id="contrasena-anterior" name="contrasena-anterior" required>
+                    <br>
+                    <label for="nueva-contrasena">Nueva Contraseña:</label>
+                    <input type="password" id="nueva-contrasena" name="nueva-contrasena" required>
+                    <br>
+                    <label for="repetir-contrasena">Repetir Contraseña:</label>
+                    <input type="password" id="repetir-contrasena" name="repetir-contrasena" required>
+                    <br>
+                    <button type="button" onclick="guardarContrasena()">Guardar Contraseña</button>
+                </form>
+            </div>
+        </div>
     </div>
 
     <script>
-        function editarCampo(id) {
-            const campo = document.getElementById(id);
-            const valorActual = campo.textContent;
-            const nuevoValor = prompt(`Edita el campo ${id}:`, valorActual);
-
-            if (nuevoValor !== null) {
-                campo.textContent = nuevoValor;
-            }
+        function mostrarModal() {
+            const modal = document.getElementById('modal');
+            modal.style.display = 'block';
         }
-    </script> 
+
+        function cerrarModal() {
+            const modal = document.getElementById('modal');
+            modal.style.display = 'none';
+        }
+
+        function guardarContrasena() {
+            const contrasenaAnteriorInput = document.getElementById('contrasena-anterior');
+            const nuevaContrasenaInput = document.getElementById('nueva-contrasena');
+            const repetirContrasenaInput = document.getElementById('repetir-contrasena');
+
+            const contrasenaAnterior = contrasenaAnteriorInput.value;
+            const nuevaContrasena = nuevaContrasenaInput.value;
+            const repetirContrasena = repetirContrasenaInput.value;
+
+            // Realiza aquí las validaciones necesarias, por ejemplo:
+            if (contrasenaAnterior === '' || nuevaContrasena === '' || repetirContrasena === '') {
+                alert('Todos los campos son obligatorios');
+                return;
+            }
+
+            if (nuevaContrasena !== repetirContrasena) {
+                alert('Las contraseñas no coinciden');
+                return;
+            }
+
+            cerrarModal();
+
+            // Limpia los campos de entrada
+            contrasenaAnteriorInput.value = '';
+            nuevaContrasenaInput.value = '';
+            repetirContrasenaInput.value = '';
+        }
+    </script>
 </body>
 
 </html>
