@@ -1,36 +1,82 @@
 <!DOCTYPE html>
 <html lang="es">
-	<head>
-		<meta charset="UTF-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>TalkHive! Registrarse</title>
-		<link rel="shortcut icon" href="imagenes/logo.jpg" type="image/x-icon">
-		<link rel="stylesheet" href="./styles/registrase.css">
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-	</head>
-	<body>
-        <header class="container">
-            <div class="logo"></div>
-            <div class="bottom_part"></div>
-        </header>
-		<main>
-			<form>
-				<h1>Formulario de Login</h1>
-				<div class="container_names">
-					<input type="text" id="nombre" name="nombre" placeholder="Nombre">
-					<input type="text" id="apellido" name="apellido" placeholder="Apellido">
-				</div>
-				<div class="container_credentials">
-					<input type="text" id="username" name="username" placeholder="Nombre de Usuario">
-					<input type="email" id="email" name="email" placeholder="Correo Electrónico">
-					<input type="password" id="contraseña" name="contraseña" placeholder="Contraseña">
-					<input type="password" id="repetir_contraseña" name="repetir_contraseña" placeholder="Repetir Contraseña">
-				</div>
-				<input id="enviar" type="submit" value="Registrarse">
-			</form>
-		</main>
-	</body>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="TalkHive - Plataforma de registro">
+    <meta name="keywords" content="registro, usuario, contraseña, correo electrónico">
+    <title>TalkHive! Registrarse</title>
+    <link rel="shortcut icon" href="imagenes/logo.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="./styles/registrase.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header class="container">
+        <div class="logo"></div>
+        <div class="bottom_part"></div>
+    </header>
+    <main>
+        <form onsubmit="enviar(); return false;">
+            <h1>Formulario de Registro</h1>
+            <div class="container_names">
+                <input type="text" id="nombre" name="nombre" placeholder="Nombre">
+                <input type="text" id="apellido" name="apellido" placeholder="Apellido">
+            </div>
+            <div class="container_credentials">
+                <input type="text" id="username" name="username" placeholder="Nombre de Usuario">
+                <input type="email" id="email" name="correo" placeholder="Correo Electrónico">
+                <input type="password" id="contraseña" name="contraseña" placeholder="Contraseña">
+                <input type="password" id="repetir_contraseña" name="repetir_contraseña" placeholder="Repetir Contraseña">
+            </div>
+            <input id="enviar" type="submit" value="Registrarse">
+        </form>
+         <script> 
+
+            // Estan fallando las validaciones y el envio de datos / Revisar!
+
+            function enviar() {
+                var nombre = document.getElementById("nombre").value;
+                var apellido = document.getElementById("apellido").value;
+                var username = document.getElementById("username").value;
+                var email = document.getElementById("email").value;
+                var contraseña = document.getElementById("contraseña").value;
+
+                var mensajeError = "";
+
+                if (nombre === "") {
+                    mensajeError += "El nombre es obligatorio.<br>";
+                    document.getElementById("nombre").focus();
+                }
+                if (apellido === "") {
+                    mensajeError += "El apellido es obligatorio.<br>";
+                    document.getElementById("apellido").focus();
+                }
+                if (username === "") {
+                    mensajeError += "El nombre de usuario es obligatorio.<br>";
+                    document.getElementById("username").focus();
+                }
+                if (email === "") {
+                    mensajeError += "El email es obligatorio.<br>";
+                    document.getElementById("email").focus();
+                }
+                if (contraseña === "") {
+                    mensajeError += "La contraseña es obligatoria.<br>";
+                    document.getElementById("contraseña").focus();
+                }
+
+                if (mensajeError !== "") {
+                    document.getElementById("mensaje").innerHTML = mensajeError;
+                } else {
+                    document.getElementById("mensaje").innerHTML = "Formulario completado correctamente.";
+                }
+            }
+        </script>
+    </main>
+</body>
+
 </html>

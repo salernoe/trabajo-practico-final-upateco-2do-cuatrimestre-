@@ -15,6 +15,9 @@
 </head>
 
 <body>
+    <button id="volver-main" onclick="volverMain()">
+        <i class="fas fa-times"></i>
+    </button>
     <section class="seccion-perfil-usuario">
         <div class="perfil-usuario-header">
             <div class="perfil-usuario-portada">
@@ -32,6 +35,9 @@
             </div>
             <div class="perfil-usuario-footer">
                 <ul class="lista-datos">
+
+                    <!-- Ver como se podria llevar la funcionalidad de los botones hacia la parte script -->
+                    
                     <li><i class="fa fa-user"></i> Nombre de Usuario:
                         <span id="nombreUsuario">Usuario123</span> <button onclick="editarCampo('nombreUsuario')">Editar</button></li>
                     <li><i class="fa fa-user"></i> Nombre:
@@ -51,7 +57,15 @@
                 <span class="close-button" onclick="cerrarModal()">&times;</span>
                 <h2>Cambiar Contraseña</h2>
                 <form>
-                    <label for="contrasena-anterior">Contraseña Anterior:</label>
+                    <input type="password" id="contraseñaAnt" name="contraeñaanterior" placeholder="Contraseña Anterior" required>
+                    <br>
+                    <input type="password" id="nueva_contraeña" name="contraseñanueva" placeholder="Nueva Contraseña" required>
+                    <br>
+                    <input type="password" id="repetir_contraseña" name="repetir_contraseña" placeholder="Repetir Contraseña Nueva" required>
+                    <br>
+                    <button type="button" onclick="guardarContrasena()">Guardar Contraseña</button>
+                    
+                    <!-- <label for="contrasena-anterior">Contraseña Anterior:</label>
                     <input type="password" id="contrasena-anterior" name="contrasena-anterior" required>
                     <br>
                     <label for="nueva-contrasena">Nueva Contraseña:</label>
@@ -60,13 +74,17 @@
                     <label for="repetir-contrasena">Repetir Contraseña:</label>
                     <input type="password" id="repetir-contrasena" name="repetir-contrasena" required>
                     <br>
-                    <button type="button" onclick="guardarContrasena()">Guardar Contraseña</button>
+                    <button type="button" onclick="guardarContrasena()">Guardar Contraseña</button> -->
+
                 </form>
             </div>
         </div>
     </div>
 
     <script>
+        function volverMain() {
+        window.location.href = "main.html";
+        }
         function mostrarModal() {
             const modal = document.getElementById('modal');
             modal.style.display = 'block';
@@ -86,7 +104,8 @@
             const nuevaContrasena = nuevaContrasenaInput.value;
             const repetirContrasena = repetirContrasenaInput.value;
 
-            // Realiza aquí las validaciones necesarias, por ejemplo:
+            // Esta funcion no esta funcionando correctamente
+
             if (contrasenaAnterior === '' || nuevaContrasena === '' || repetirContrasena === '') {
                 alert('Todos los campos son obligatorios');
                 return;
@@ -98,8 +117,7 @@
             }
 
             cerrarModal();
-
-            // Limpia los campos de entrada
+            
             contrasenaAnteriorInput.value = '';
             nuevaContrasenaInput.value = '';
             repetirContrasenaInput.value = '';
