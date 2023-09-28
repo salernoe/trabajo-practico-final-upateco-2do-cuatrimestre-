@@ -137,8 +137,8 @@ form {
 }
 
 
-#email,
-#password {
+#uemailinp,
+#upasswordinp {
   width: 100%;
   border: 1px solid #bfc2c7;
   border-radius: 0.3rem;
@@ -148,13 +148,13 @@ form {
   margin-bottom: 13px;
 }
 
-#email::placeholder,
-#password::placeholder {
+#uemailinp::placeholder,
+#upasswordinp::placeholder {
   color: #59007c;
 }
 
-#email:focus,
-#password:focus {
+#uemailinp:focus,
+#upasswordinp:focus {
   background-color: darkgrey;
 }
 
