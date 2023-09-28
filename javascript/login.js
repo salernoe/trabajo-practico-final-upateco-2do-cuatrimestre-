@@ -31,16 +31,19 @@ function LoadUserDetails(user_id,  userContainer) { //revisar aqui que los datos
 
 function login(){
     const dato = {
-        username: document.getElementById("uemailinp").value,
+        username: document.getElementById("nombreUsuario").value,
         password: document.getElementById("upasswordinp").value,
     };
 
     if(Data.username ==="" || data.password === "" ) {
-        alert("Por favor introducier un nombre y una contraseña");
+        alert("Por favor introducir un nombre y una contraseña");
         return;
     }
 
-    fetch( login.html, { // Aqui iria la direccion de la URL/ creo que es esa, sino probar 127.0.0.1// 
+    fetch('http://127.0.0.1:5000/login/logearse' , { 
+
+        // Aqui iria la direccion de la URL/ creo que es esa, sino probar 127.0.0.1// 
+
         method: 'POST',
         headers: {
             'Contetn-Type' : 'application/json',

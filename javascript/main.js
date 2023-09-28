@@ -1,6 +1,7 @@
 // Contiene funcionalidades destinadas a manejar datos de los servidores (servers).
 
 function LoadServers(user_id) {  //ver como se han llamado a los usuarios en la DB 
+    
     fetch('') //Aqui tambien iria la ubicacion del HTML
         .then(response => response.json())
         .then(servers => {
