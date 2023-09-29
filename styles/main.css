@@ -7,51 +7,112 @@
 
 /* Estilo del menú lateral */
 .container__menu {
+    display: flex;
+    flex-direction: column; /* Alinea el contenido en columna vertical */
+    justify-content: space-between; /* Centra verticalmente el contenido */
+    align-items: flex-start; /* Centra horizontalmente el contenido */
+    padding: 0.43rem;
+    padding-left: 0.719rem;
     width: 250px; /* Ancho del menú */
     height: 100%;
     position: fixed;
     top: 0;
-    left: -250px; /* Inicialmente oculto */
-    background-color: #ffffff; /* Color de fondo del menú */
+    left: -5px; /* Inicialmente oculto */
+    background-image: radial-gradient(circle at top, rgb(160, 25, 187), rgb(32, 4, 136) 40%, black 110%);
     transition: left 0.3s ease-in-out; /* Transición suave */
-
+    border-radius: 0.7rem;
     /* Añadir centrado del contenido */
+}
+
+.container_buttons{
+    width: 100%;
+    height: 33%;
     display: flex;
-    flex-direction: column; /* Alinea el contenido en columna vertical */
-    justify-content: center; /* Centra verticalmente el contenido */
-    align-items: center; /* Centra horizontalmente el contenido */
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-.container__menu.active {
-    left: 0; /* Mostrar el menú cuando tiene la clase 'active' */
-}
-
-/* Estilos para elementos interactivos */
-.container__explore-server,
-.container__user-login,
-.container__user-profile {
+.buttons {
     display: flex;
-    flex-direction: row; /* Alinea los elementos en fila horizontal */
-    align-items: center; /* Alinea los elementos verticalmente en el centro */
-    margin: 10px 0; /* Agrega margen entre los elementos */
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 0.777rem;
+    height: 3.3rem;
+
+}
+.tag_name {
+    font-size: 0.95rem;
+    font-weight: bolder;
+}
+.buttons:last-child {
+    justify-content: flex-start;
+    column-gap: 0.7rem;
+}
+.img_user {
+    border-radius: 50%;
+    width: 18%;
 }
 
-/* Cambia el color de fondo al pasar el mouse */
-.container__explore-server:hover,
-.container__user-login:hover {
-    background-color: #555;
+.container_server-circle {
+    width: 1.56rem;
+    height: 1.56rem;
 }
 
-/* Estilo del encabezado */
+
+::-webkit-scrollbar {
+    width: 0.5px;
+}
+::-webkit-scrollbar-thumb {
+    background-color: transparent;
+}
+
+.container__explore-server {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    list-style: none;
+    height: 65.5%;
+    width: 100%;
+    background-color: rgb(191, 169, 226);
+    border-radius: 1.3rem;
+    border: 3px outset rgb(85, 23, 167);
+    padding: 0.35rem;
+    position: relative;
+    z-index: 10;
+    row-gap: 0.3rem;
+    overflow: auto;
+}
+
+
+.explore-server {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    column-gap: 0.53rem;
+    padding: 0.55rem;
+    position: relative;
+    border: none;
+    width: 100%;
+    border-radius: 0.777rem;
+    min-height: 3.3rem;
+    background-color: rgb(89, 10, 180);
+    color: #dad7d7;
+}
+
 .container__list {
     background-color: #333;
     color: #fff;
     padding: 10px;
+    border-bottom-right-radius:  0.3rem;
+    border-bottom-left-radius:  0.3rem;
     cursor: pointer;
     display: flex;
     justify-content: space-between;
     align-items: center; /* Centra verticalmente el contenido */
-    background-image: linear-gradient(rgb(51, 7, 172) 4%, rgb(160, 25, 187), rgb(32, 4, 136), black 117%);
+    background-image: radial-gradient(circle at left, rgb(160, 25, 187), rgb(32, 4, 136) 30%, black 130%);
     /* box-shadow: 0px 5px 15px 5px #2d0138; */
     position: fixed;
     top: 0;
@@ -99,5 +160,5 @@
     width: 100%;
     height: 100%;
     /* background-color: rgba(0, 0, 0, 0.5); / Fondo semitransparente para el overlay */
-    z-index: 1; 
+    z-index: 1;
 }

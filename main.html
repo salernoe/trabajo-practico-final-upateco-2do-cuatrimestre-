@@ -1,59 +1,124 @@
+
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TalkHive! Inicio</title>
-    <link rel="stylesheet" href="styles/main.css">
-    <link rel="shortcut icon" href="imagenes/logo.jpg" type="image/x-icon">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-</head>
-<body>
-    <header class="container__list">
-        <svg id="menuToggle" class="container__list-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-            <path class="container__list-icon1" fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
-        </svg>
-    </header>
-    <aside class="container__menu" id="sideMenu">
-        <section class="container__explore-server">
-            <label for="addServer" class="container__server-label">Añadir Servidor</label>
-            <input type="radio" id="addServer" name="serverOption" class="container__server-radio">
-            <svg class="container__server" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z" />
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>TalkHive! Inicio</title>
+        <link rel="stylesheet" href="styles/main.css">
+        <link rel="shortcut icon" href="imagenes/logo.jpg" type="image/x-icon">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+            rel="stylesheet">
+    </head>
+    <body>
+        <header class="container__list">
+            <svg id="menuToggle" class="container__list-icon"
+                xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                fill="currentColor" viewBox="0 0 16 16">
+                <path class="container__list-icon1" fill-rule="evenodd"
+                    d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
             </svg>
-        </section>
-        <section class="container__user-login">
-            <label for="searchServer" class="container__login-label">Buscar Servidor</label>
-            <input type="radio" id="searchServer" name="serverOption" class="container__login-radio">
-            <svg class="container__login" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z" />
-            </svg>
-        </section>
-        <br>
-        <br>
-        <br>
-        <section class="container__user-profile">
-            <label for="userProfile" class="container__server-label">Mi Usuario</label>
-            <input type="radio" id="userProfile" name="serverOption" class="container__server-radio">
-            <svg class="container__server" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z" />
-            </svg>
-        </section>
-    </aside>
-    
-    <!-- Elemento de fondo (overlay) -->
-    <div id="overlay" class="overlay"></div>
+        </header>
+        <aside class="container__menu" id="sideMenu">
+            <ol class="container__explore-server">
+                <li class="explore-server">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16"
+                        height="16" fill="currentColor"
+                        class="bi bi-hdd-stack-fill" viewBox="0 0 16 16">
+                        <path
+                            d="M2 9a2 2 0 0 0-2 2v1a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-1a2 2 0 0 0-2-2H2zm.5 3a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm2 0a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zM2 2a2 2 0 0 0-2 2v1a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H2zm.5 3a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm2 0a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1z" />
+                    </svg>
+                    Servidor 1</li>
+                <li class="explore-server">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16"
+                        height="16" fill="currentColor"
+                        class="bi bi-hdd-stack-fill" viewBox="0 0 16 16">
+                        <path
+                            d="M2 9a2 2 0 0 0-2 2v1a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-1a2 2 0 0 0-2-2H2zm.5 3a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm2 0a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zM2 2a2 2 0 0 0-2 2v1a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H2zm.5 3a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm2 0a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1z" />
+                    </svg>
+                    Servidor 2</li>
+                <li class="explore-server">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16"
+                        height="16" fill="currentColor"
+                        class="bi bi-hdd-stack-fill" viewBox="0 0 16 16">
+                        <path
+                            d="M2 9a2 2 0 0 0-2 2v1a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-1a2 2 0 0 0-2-2H2zm.5 3a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm2 0a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zM2 2a2 2 0 0 0-2 2v1a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H2zm.5 3a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm2 0a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1z" />
+                    </svg>
+                    Servidor 3</li>
+                <li class="explore-server">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16"
+                        height="16" fill="currentColor"
+                        class="bi bi-hdd-stack-fill" viewBox="0 0 16 16">
+                        <path
+                            d="M2 9a2 2 0 0 0-2 2v1a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-1a2 2 0 0 0-2-2H2zm.5 3a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm2 0a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zM2 2a2 2 0 0 0-2 2v1a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H2zm.5 3a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm2 0a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1z" />
+                    </svg>
+                    Servidor 4</li>
+                <li class="explore-server">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16"
+                        height="16" fill="currentColor"
+                        class="bi bi-hdd-stack-fill" viewBox="0 0 16 16">
+                        <path
+                            d="M2 9a2 2 0 0 0-2 2v1a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-1a2 2 0 0 0-2-2H2zm.5 3a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm2 0a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zM2 2a2 2 0 0 0-2 2v1a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H2zm.5 3a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm2 0a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1z" />
+                    </svg>
+                    Servidor 5</li>
+                <li class="explore-server">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16"
+                        height="16" fill="currentColor"
+                        class="bi bi-hdd-stack-fill" viewBox="0 0 16 16">
+                        <path
+                            d="M2 9a2 2 0 0 0-2 2v1a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-1a2 2 0 0 0-2-2H2zm.5 3a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm2 0a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zM2 2a2 2 0 0 0-2 2v1a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H2zm.5 3a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm2 0a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1z" />
+                    </svg>
+                    Servidor 6</li>
+                <li class="explore-server">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16"
+                        height="16" fill="currentColor"
+                        class="bi bi-hdd-stack-fill" viewBox="0 0 16 16">
+                        <path
+                            d="M2 9a2 2 0 0 0-2 2v1a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-1a2 2 0 0 0-2-2H2zm.5 3a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm2 0a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zM2 2a2 2 0 0 0-2 2v1a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H2zm.5 3a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm2 0a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1z" />
+                    </svg>
+                    Servidor 7</li>
 
-    <main class="container__main-text">
-        <h1 class="container__title">TalkHive</h1>
-        <p class="container__text">Aún no te has unido a un servidor</p>
-        <p class="container__text">Intenta buscar uno o crea uno propio</p>
-    </main>
+            </ol>
+            <div class="container_buttons">
+                <button class="buttons"><span class="tag_name">Añadir Servidor</span>
+                    <svg class="container_server-circle"
+                        xmlns="http://www.w3.org/2000/svg" width="16"
+                        height="16" fill="currentColor"
+                        class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+                        <path class="server_circle"
+                            d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z" />
+                    </svg>
+                </button>
+                <button class="buttons"><span class="tag_name">Explorar
+                        Servidores</span>
+                    <svg class="container_server-circle"
+                        xmlns="http://www.w3.org/2000/svg" width="16"
+                        height="16" fill="currentColor"
+                        class="bi bi-life-preserver" viewBox="0 0 16 16">
+                        <path class="server_circle"
+                            d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm6.43-5.228a7.025 7.025 0 0 1-3.658 3.658l-1.115-2.788a4.015 4.015 0 0 0 1.985-1.985l2.788 1.115zM5.228 14.43a7.025 7.025 0 0 1-3.658-3.658l2.788-1.115a4.015 4.015 0 0 0 1.985 1.985L5.228 14.43zm9.202-9.202-2.788 1.115a4.015 4.015 0 0 0-1.985-1.985l1.115-2.788a7.025 7.025 0 0 1 3.658 3.658zm-8.087-.87a4.015 4.015 0 0 0-1.985 1.985L1.57 5.228A7.025 7.025 0 0 1 5.228 1.57l1.115 2.788zM8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6z" />
+                    </svg>
+                </button>
+                <button class="buttons buttos_user"><img class="img_user"
+                        src="./img/Avatar.png" alt="user-img"><span
+                        class="tag_name">Anonymus</span></button>
+            </div>
+        </aside>
 
-    <script>
+        <!-- Elemento de fondo (overlay) -->
+        <div id="overlay" class="overlay"></div>
+
+        <main class="container__main-text">
+            <h1 class="container__title">TalkHive</h1>
+            <p class="container__text">Aún no te has unido a un servidor</p>
+            <p class="container__text">Intenta buscar uno o crea uno propio</p>
+        </main>
+
+        <script>
         // Obtén una referencia a los elementos HTML que deseas manipular
         const menuToggle = document.getElementById('menuToggle');
         const sideMenu = document.getElementById('sideMenu');
@@ -80,5 +145,5 @@
             overlay.style.display = 'none';
         });
     </script>
-</body>
+    </body>
 </html>
