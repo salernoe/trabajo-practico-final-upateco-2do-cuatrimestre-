@@ -29,7 +29,7 @@
     height: 33%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-end;
 }
 
 .buttons {
@@ -40,7 +40,7 @@
     border: none;
     border-radius: 0.777rem;
     height: 3.3rem;
-
+    margin-top: 0.5rem;
 }
 .tag_name {
     font-size: 0.95rem;
