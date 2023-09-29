@@ -1,0 +1,130 @@
+<!-- Ver si es posible mover todos a template sin modificar demasiado el resto del codigo -->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Descripción de tu página">
+    <link rel="stylesheet" href="styles/user.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <title>Talkive! Mi usuario</title>
+</head>
+
+<body>
+    <button id="volver-main" onclick="volverMain()">
+        <i class="fas fa-times"></i>
+    </button>
+    <section class="seccion-perfil-usuario">
+        <div class="perfil-usuario-header">
+            <div class="perfil-usuario-portada">
+                <div class="perfil-usuario-avatar">
+                    <img src="img/Avatar.png" alt="Avatar de usuario">
+                    <button type="button" class="boton-avatar">
+                        <i class="far fa-image"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="perfil-usuario-body">
+            <div class="perfil-usuario-bio">
+                <h3 class="titulo">Mi usuario</h3>
+            </div>
+            <div class="perfil-usuario-footer">
+                <ul class="lista-datos">
+
+                    <!-- Ver como se podria llevar la funcionalidad de los botones hacia la parte script -->
+                    
+                    <li><i class="fa fa-user"></i> Nombre de Usuario:
+                        <span id="nombreUsuario">Usuario123</span> <button onclick="editarCampo('nombreUsuario')">Editar</button></li>
+                    <li><i class="fa fa-user"></i> Nombre:
+                        <span id="nombre">John</span> <button onclick="editarCampo('nombre')">Editar</button></li>
+                    <li><i class="fa fa-user"></i> Apellido:
+                        <span id="apellido">Doe</span> <button onclick="editarCampo('apellido')">Editar</button></li>
+                    <li><i class="fa fa-user"></i> Correo Electrónico:
+                        <span id="correoElectronico">john@example.com</span> <button onclick="editarCampo('correoElectronico')">Editar</button></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <div class="cambiar-contraseña">
+        <button id="cambiar-contraseña-button" onclick="mostrarModal()">Cambiar Contraseña</button>
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <span class="close-button" onclick="cerrarModal()">&times;</span>
+                <h2>Cambiar Contraseña</h2>
+                <form>
+                    <input type="password" id="contraseñaAnt" name="contraeñaanterior" placeholder="Contraseña Anterior" required>
+                    <br>
+                    <input type="password" id="nueva_contraeña" name="contraseñanueva" placeholder="Nueva Contraseña" required>
+                    <br>
+                    <input type="password" id="repetir_contraseña" name="repetir_contraseña" placeholder="Repetir Contraseña Nueva" required>
+                    <br>
+                    <button type="button" onclick="guardarContrasena()">Guardar Contraseña</button>
+                    
+                    <!-- <label for="contrasena-anterior">Contraseña Anterior:</label>
+                    <input type="password" id="contrasena-anterior" name="contrasena-anterior" required>
+                    <br>
+                    <label for="nueva-contrasena">Nueva Contraseña:</label>
+                    <input type="password" id="nueva-contrasena" name="nueva-contrasena" required>
+                    <br>
+                    <label for="repetir-contrasena">Repetir Contraseña:</label>
+                    <input type="password" id="repetir-contrasena" name="repetir-contrasena" required>
+                    <br>
+                    <button type="button" onclick="guardarContrasena()">Guardar Contraseña</button> -->
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function volverMain() {
+        window.location.href = "main.html";
+        }
+        function mostrarModal() {
+            const modal = document.getElementById('modal');
+            modal.style.display = 'block';
+        }
+
+        function cerrarModal() {
+            const modal = document.getElementById('modal');
+            modal.style.display = 'none';
+        }
+
+        function guardarContrasena() {
+            const contrasenaAnteriorInput = document.getElementById('contrasena-anterior');
+            const nuevaContrasenaInput = document.getElementById('nueva-contrasena');
+            const repetirContrasenaInput = document.getElementById('repetir-contrasena');
+
+            const contrasenaAnterior = contrasenaAnteriorInput.value;
+            const nuevaContrasena = nuevaContrasenaInput.value;
+            const repetirContrasena = repetirContrasenaInput.value;
+
+            // Esta funcion no esta funcionando correctamente
+
+            if (contrasenaAnterior === '' || nuevaContrasena === '' || repetirContrasena === '') {
+                alert('Todos los campos son obligatorios');
+                return;
+            }
+
+            if (nuevaContrasena !== repetirContrasena) {
+                alert('Las contraseñas no coinciden');
+                return;
+            }
+
+            cerrarModal();
+            
+            contrasenaAnteriorInput.value = '';
+            nuevaContrasenaInput.value = '';
+            repetirContrasenaInput.value = '';
+        }
+    </script>
+</body>
+
+</html>
