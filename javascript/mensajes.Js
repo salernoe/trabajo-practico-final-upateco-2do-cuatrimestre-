@@ -42,7 +42,7 @@ function LoadMessages(channel_id) {
         });
 }
 
-function sendMessage(channel_id, user_id) { // Ver para modificar con los datos reales de la DB
+function sendMessage(channel_id, user_id) { // Ver para modificar con los datos de la DB
     const message = document.getElementById("messageTextArea").value;
 
     const messageForm = {
@@ -51,7 +51,7 @@ function sendMessage(channel_id, user_id) { // Ver para modificar con los datos 
         user_id: user_id, // Ver que coincidan con BD real
     };
 
-    fetch('', { // Ver endpoints reales
+    fetch('', { // Ver endpoints 
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -60,7 +60,7 @@ function sendMessage(channel_id, user_id) { // Ver para modificar con los datos 
         credentials: 'include'
     }).then(response => {
         if (response.ok) {
-            LoadMessages(channel_id); // Ver que coincidan con BD real
+            LoadMessages(channel_id); // Ver que coincidan con BD 
         }
     });
 }

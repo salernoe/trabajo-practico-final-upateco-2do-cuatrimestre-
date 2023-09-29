@@ -57,7 +57,7 @@ function login(){
                 return response.json().then(user =>{
                     localStorage.setItem("user",Json.stringify(user));
                     window.location.href = "./index.html"; 
-                    // Aca iria en realidad el html nuestro: creo que es server  
+                    // Aca iria el html : creo que es server  
                 });
             }
         })
